@@ -64,7 +64,7 @@ def create_features(data):
 
     for i in range(5):
         data[f"Route_{i+1}"] = (
-            route_parts.str[i].str.strip().fillna("None")
+           route_parts.str[i].fillna("None").astype(str).str.strip()
         )
 
     drop_cols = [
